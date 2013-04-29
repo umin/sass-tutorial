@@ -1,6 +1,14 @@
+$main-color: #ce4dd6;
+$style: solid;
+
+#navbar {
+	border-bottom: {
+		color: $main-color;
+		style: $style;
+	}
+}
+
 a {
-	color: #999;
-	&:hover { color: #ffb3ff; }
-	&:visited { color: #c458cb; }
-	&:active { color: #999; }
+	color: $main-color;
+	&:hover { border-bottom: $style; }
 }
