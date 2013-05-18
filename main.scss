@@ -1,5 +1,26 @@
-@import "rounded";
+$itemSlpie: 4;
+$itemSum: 0;
+$xPosationRowNumber: 0;
+$yItemNumber: 0;
+$xShiftPostation: 20px;
+$yShiftPostation: 20px;
 
-#navbar li { @include rounded(top, left); }
-#footer { @include rounded(top, left, 5px); }
-#sidebar { @include rounded(top, left, 8px); }
+// image src
+$imageFileName: "icon-list.png";
+
+
+@each $item in a, b, c, d, e, f, g, h
+{
+    $itemSum: $itemSum + 1;
+    .item-#{$item} {
+
+        background: url($imageFileName) ($xPosationRowNumber * $xShiftPostation) ($yItemNumber * $yShiftPostation);
+
+        $yItemNumber: $yItemNumber + 1;
+
+        @if ($itemSum % $itemSlpie == 0) {
+            $yItemNumber: 0;
+            $xPosationRowNumber: $xPosationRowNumber + 1;
+        }
+    }
+}
